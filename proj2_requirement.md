@@ -5,7 +5,7 @@ For this programming assignment, you have to extend the simulator you have devel
 ![image](https://github.com/xzhan211/CS520_Computer-Architecture-and-Organization/blob/master/picture/proj2.png?raw=true)
 A new instruction accompanies the division unit, whose format and semantics are as follows:
 * Format: DIV <dest>, <src1>, <src2>, where all operands are registers.
-* Semantics: <dest>integer part of <src1>/<src2>
+* Semantics: <dest> <- integer part of <src1>/<src2>
 ### EXTENSION 2:
 **Add forwarding mechanisms from the last stages of the FUs to forward results (including flag values) to waiting instructions in the D/RF stage.** The forwarding happens at the end of the clock cycle when the instruction producing the results (including flag values) are in final stages of the respective FUs (integer, multiplier, divider). If the forwarded result(s) is/are the only source data that the instruction in D/RF was waiting for, it can be issued at the beginning of the clock cycle that immediately follows the one when forwarding took place. Remember that an instruction in D/RF can be issued only when ALL of its source operand are available, either from registers or through forwarding. Note that all three type of FUs can generate flag values and dependencies over flags have to be implemented properly. In a given cycle, forwarding from multiple sources can take place concurrently over independent forwarding paths.
 ### EXTENSION 3:
